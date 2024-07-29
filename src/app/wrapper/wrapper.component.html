@@ -1,0 +1,10 @@
+<div class="d-flex flex-column align-items-center container py-5">
+  <div class="app">
+    <app-form (newTodo)="addTodo($event)"></app-form>
+    <app-list
+      [todos]="todoList"
+      (todoMark)="markTodo($event)"
+      (todoDeleted)="deleteTodo($event)"
+    ></app-list>
+  </div>
+</div>

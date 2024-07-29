@@ -1,0 +1,29 @@
+<div class="list mt-3">
+  @for(item of todos; track $index){
+  <div class="d-flex justify-content-between">
+    <div>
+      @if(item.marked){
+      <p class="text-decoration-line-through">{{ item.title }}</p>
+      }@else {
+      <p>{{ item.title }}</p>
+      }
+    </div>
+    <div>
+      <button
+        (click)="deleteTodo($index)"
+        class="btn btn-outline-danger btn-sm me-2"
+      >
+        Delete
+      </button>
+      <button
+        (click)="markTodo($index)"
+        class="btn btn-outline-dark btn-sm me-2"
+      >
+        Mark
+      </button>
+    </div>
+  </div>
+  }@empty {
+  <p>No Todos to display</p>
+  }
+</div>
